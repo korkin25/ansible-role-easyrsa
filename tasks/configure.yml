@@ -1,5 +1,11 @@
 ---
 
+- name: Create easyrsa pki directory
+  file:
+    name: "{{ easyrsa_pki_dir }}"
+    mode: 700
+    state: directory
+
 - name: Initiate PKI
   command: easyrsa --batch init-pki
   args:
